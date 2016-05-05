@@ -1,0 +1,16 @@
+git init
+
+ssh-keygen -t rsa -C "2976477005@qq.com" // copy the content of rsa.pub to my sshkey list on github.
+
+git remote add origin https://github.com/Verbrechen/BootstrapUI.git
+
+git add --all 
+
+git commit -m "verson 1.0"
+
+git push -u origin master // parameter -u for the first push,no longer inneed later.
+
+-----------------------------------------------------------------------------------------
+  
+                                                                   2016/05/05 by Async
+
