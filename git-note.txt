@@ -10,6 +10,7 @@ git commit -m "verson 1.0"
 
 git push -u origin master // parameter -u for the first push,no longer inneed later.
 
+This comment is written by the vim editor on branch dev.
 -----------------------------------------------------------------------------------------
   
                                                                    2016/05/05 by Async
