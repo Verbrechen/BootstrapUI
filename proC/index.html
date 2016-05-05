@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script type="text/javascript">
+        $(function(){
+            var $menu1,$menu2,$menu3,$menu,$msgs;
+            $menu1 = $("#sidebar a:eq(0)");
+            $menu2 = $("#sidebar a:eq(1)");
+            $menu3 = $("#sidebar a:eq(2)");
+            $menu = $("#sidebar a");
+
+            $msgs = $("#content_5 a");
+            $("#display-content1").show().siblings().hide();
+            $("#nav-content").hide();
+
+            $menu1.click(function(event){
+                $("#display-content1").show().siblings().hide();
+                $("#nav-content").hide();
+            });
+
+            $menu2.click(function(){
+                $("#display-content2").show().siblings().hide();
+                $("#nav-content").show();
+            });
+
+            $menu3.click(function(){
+                $("#display-content3").show().siblings().hide();
+                $("#nav-content").hide();
+            });
+
+            $msgs.click(function(){
+                $("#nav-content ul li:eq(2) a").tab("show");
+            });
+//            $menu.click(function(){
+//                $menu1.addClass("light").siblings().removeClass("light");
+//
+//            });
+
+//            $menu.click(function(){
+//                $menu1.addClass("active").siblings().removeClass("active");
+//            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="nav-head" class="navbar navbar-default navbar-fixed-top">
+    <div id="nav-left">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active" id="fist-head-li"><a href="#">主站</a></li>
+            <li role="presentation"><a href="#">画友</a></li>
+            <li role="presentation"><a href="#">游戏中心</a></li>
+            <li role="presentation"><a href="#">直播</a></li>
+            <li role="presentation"><a href="#">周边</a></li>
+            <li role="presentation"><a href="#">BML</a></li>
+        </ul>
+    </div>
+    <div id="nav-right">
+        <ul class="nav nav-pills">
+            <li role="presentation"><img src="assets/images/icon_min.jpg" class="img-circle"></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <li role="presentation"><a href="#">动态</a></li>
+            <li role="presentation"><a href="#">收藏夹</a></li>
+            <li role="presentation"><a href="#">历史</a></li>
+            <li role="presentation" id="last-head-li"><a href="#">投稿</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="div-main">
+    <div id="div-board" class="jumbotron">
+        <div id="search-box">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="卡布基诺">
+            </div>
+            <button type="submit" class="btn btn-default"><span id="s-btn">搜索</span></button>
+        </form>
+        </div>
+    </div>
+
+    <div id="sidebar" class="list-group">
+        <div id="sidebar-head">
+            <img src="assets/images/icon_small.jpg" id="sidebar-head-img" class="img-circle">
+        </div>
+                <a href="#" class="list-group-item side-a"><span>添加好友</span></a>
+                <a href="#" class="list-group-item side-a"><span>我的通讯录</span></a>
+                <a href="#" class="list-group-item side-a"><span>通知提醒</span></a>
+    </div>
+    <div id="content">
+        <div id="nav-content">
+                <ul id="dis-friend-list" class="nav nav-tabs nav-justified ">
+                    <li id="goFriendList" role="presentation" class="active"><a href="#content_4" data-toggle="tab">我的好友</a></li>
+                    <li id="goMsgList" role="presentation"><a href="#content_5" data-toggle="tab">消息列表</a></li>
+                    <li id="goMsg" role="presentation"><a href="#content_6" data-toggle="tab">发送消息</a></li>
+                </ul>
+        </div>
+        <div class="display-content">
+            <div id="display-content1" class="tab-content">1区尚未开放，敬请期待</div>
+        <div id="display-content2" class="tab-content">
+            <div id="content_4" class="tab-pane fade in active list-group">
+
+                <a href="#" class="list-group-item">
+                    <img src="assets/images/icon_small.jpg" class="img-circle">
+                    Ellen Barker<span class="badge">14</span>
+                </a>
+                <a href="#" class="list-group-item">
+                    <img src="assets/images/icon_small.jpg" class="img-circle">
+                    Haruki<span class="badge">4</span>
+                </a>
+                <a href="#"class="list-group-item">
+                    <img src="assets/images/icon_small.jpg" class="img-circle">
+                    <span class="myFriend">Onejyan</span><span class="badge">20</span>
+                </a>
+                <a href="#" class="list-group-item">
+                    <img src="assets/images/icon_small.jpg" class="img-circle">
+                    <span class="myFriend">aniki</span><span class="badge">20</span>
+                </a>
+                <a href="#" class="list-group-item">
+                    <img src="assets/images/icon_small.jpg" class="img-circle">
+                    <span class="myFriend">brother</span><span class="badge">20</span>
+                </a>
+                <a href="#" class="list-group-item">
+                    <img src="assets/images/icon_small.jpg" class="img-circle">
+                    <span class="myFriend">Alisa</span><span class="badge">20</span>
+                </a>
+                <a href="#"class="list-group-item">
+                    <img src="assets/images/icon_small.jpg" class="img-circle">
+                    <span class="myFriend">Nanami</span><span class="badge">20</span>
+                </a>
+            </div>
+            <div id="content_5" class="tab-pane fade list-group">
+                <a href="#" class="list-group-item">
+                        <img src="assets/images/icon_small.jpg" class="img-circle"><span class="myFriend">Ellen Barker</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;打游戏又不理我！
+                 </a>
+                <a href="#" class="list-group-item">
+                        <img src="assets/images/icon_small.jpg" class="img-circle"><span class="myFriend">Ellen Barker</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;又在打游戏了
+                 </a>
+                <a href="#" class="list-group-item">
+                        <img src="assets/images/icon_small.jpg" class="img-circle"><span class="myFriend">Onejyan</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;什么时候回来？
+                </a>
+                <a href="#" class="list-group-item">
+                        <img src="assets/images/icon_small.jpg" class="img-circle"><span class="myFriend">Alisa</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;今天一起玩GEA2吗？
+                </a>
+                <a href="#" class="list-group-item">
+                        <img src="assets/images/icon_small.jpg" class="img-circle"><span class="myFriend">brother</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;来打LOL
+                </a>
+                <a href="#" class="list-group-item">
+                        <img src="assets/images/icon_small.jpg" class="img-circle"><span class="myFriend">Onejyan</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;白T恤好一些吧
+                </a>
+            </div>
+            <div id="content_6" class="tab-pane fade">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="发送给Async" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="邮箱地址" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                </div>
+                <div class="panel panel-info">
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="8"></textarea>
+                        </div>
+                    </form>
+                    <div class="btnDiv">
+                    <button type="submit" class="btn btn-info">发送</button>
+                    <button type="button"  class="btn btn-info  btn-cancel">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="display-content3" class="tab-content">3区尚未开放，敬请期待</div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>

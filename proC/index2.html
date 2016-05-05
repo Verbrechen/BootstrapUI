@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,minimum-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style>
+        .connectList{
+            width:200px;
+            border:1px dotted black;
+            display:table-cell;
+			
+        }
+        .eachPerson{
+            line-height:30px; 
+            padding-left:20px;
+        }
+
+        .eachPerson:hover{
+            background-color:rgb(51, 122, 183);
+            color: white;
+            cursor: pointer;
+        }
+        .personImg{
+            display:table-cell;
+            width:25px;
+            float:left;
+            margin:2px;
+        }
+
+        .connectInfo{
+            width:600px;
+            border:1px dotted black;
+            display:none; 
+            position:relative;
+            padding:5px;
+        }
+
+        .me,.otherPerson{
+            position: relative;
+            width:inherit;
+            min-height:25px; 
+            line-height:25px; 
+            /*border:1px dotted black; */
+            margin:5px;
+        }
+
+        .connectContent{
+            display:inline-block;
+            background-color:#eee;
+            width:540px;
+            /*color:white;*/
+            padding:5px;
+            border-radius: 5px;
+        }
+
+        .leftContent{
+            margin-right: 10px;
+        }
+
+        .rightContent{
+            margin-left: 10px;
+        }
+
+        .arrow{
+            z-index: 1;
+			top: 10px;
+            position: absolute; 
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .arrowLeft{
+            border-right: 8px solid #eee;
+            left: 52px;
+        }
+
+        .arrowRight{
+            border-left: 8px solid #eee;
+            left:540px;
+        }
+
+        .textDiv{
+            display:inline-block; 
+            width:500px; 
+            min-height:25px; 
+            line-height:25px;
+            border:1px solid black;
+            padding:5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="nav-head">
+    <div id="nav-left">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">主页</a></li>
+            <li role="presentation"><a href="#">个人资料</a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+        </ul>
+    </div>
+    <div id="nav-right">
+        <ul class="nav nav-pills">
+            <li role="presentation">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="卡布基诺">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span id="s-btn">搜索</span></button>
+                </form>
+            </li>
+            <li role="presentation"><img src="assets/images/icon_small.jpg" class="img-circle"></li>
+        </ul>
+    </div>
+</div>
+<div id="div-main">
+    <div id="sidebar">
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <a href="#addFriend" class="nav-header collapsed" data-toggle="collapse">添加好友</a>
+                <ul id="addFriend" class="nav nav-list collapse">
+                    <li><a href="#"> 手机号搜索</a></li>
+                    <li><a href="#"> 用户名搜索</a></li>
+                    <li><a href="#"> 姓名搜索</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#myContact" class="nav-header collapsed" data-toggle="collapse">我的通讯录</a>
+                <ul id="myContact" class="nav nav-list collapse">
+                    <li><a href="#">我的好友</a></li>
+                    <li><a href="#">消息列表</a></li>
+                    <li><a href="#">发送消息</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#myNotice" class="nav-header collapsed" data-toggle="collapse">通知提醒</a>
+                <ul id="myNotice" class="nav nav-list collapse">
+                    <li><a href="#">系统通知</a></li>
+                    <li><a href="#">消息通知</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <!--<div id="nav-content">
+            <ul class="nav nav-pills nav-justified">
+                <li role="presentation" class="active"><a href="#">主页</a></li>
+                <li role="presentation"><a href="#">个人资料</a></li>
+                <li role="presentation"><a href="#">消息</a></li>
+            </ul>
+        </div>-->
+        <div id="display-content">
+        
+        <!--通知历史部分-->
+        	<div class="frameDiv" style="margin-top:10px;">
+            	<div class="connectList">
+                	<div class="connectHead" style="background-color:#eee;">
+                    	最近联系人
+                    </div>
+                    
+                </div>
+                
+                <div class="connectInfo">
+                	
+                    <div class="sendMessageContent" style="padding-left:30px; padding-top:10px; display:none;">
+                    	<div class="textDiv" contenteditable="true" ></div>
+                        <input type="button" value="发送"  onClick="sendButtonClick(this)"/>
+                    </div>
+                </div>	
+                
+            </div>
+            <!--<div id="content-addFriend"></div>
+            <div id="content-myContact"></div>
+            <div id="content-myNotice"></div>-->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var name;
+    person = new Array('张三','李四','王五','赵麻子');
+    infoArray = new Array();
+    infoArray['张三'] = new Array('hello!','Hi!','How are you?','I\'m fine,Thanks！And you ?','I\'m ok!');
+    infoArray['李四'] = new Array('hello!','Hi!','How are you?','I\'m fine,Thanks！And you ?','I\'m ok!');
+    infoArray['王五'] = new Array('hello!','Hi!','How are you?','I\'m fine,Thanks！And you ?','I\'m ok!');
+    infoArray['赵麻子'] = new Array('hello!','hello!','How are you?','I\'m fine,Thanks！And you ?','I\'m ok!');
+    $(function(){
+        var html='';
+        for(i=0,len=person.length;i<len;i++){
+            html += '<div class="eachPerson">'+
+                        '<img class="personImg" src="Images/default.jpg" />'+person[i]+
+                    '</div>';
+            }
+            $('.connectList').append(html);
+    });
+
+    
+
+    $('.connectList').on('click','.eachPerson',function(){
+        $('.connectInfo').find('.me,.otherPerson').remove();
+        name = $(this).text();        //获取eachPerson里面的文本内容
+        var html='';
+        for(i=0,len=infoArray[name].length;i<len;i++){
+            if((i+1)%2==0){
+                html += '<div class="otherPerson">'+
+                            '<img src="Images/default.jpg" style="width:50px;border-radius:25px;vertical-align: top;" />'+
+                            '<span class="arrow arrowLeft"></span>'+
+                            '<div class="connectContent rightContent">'+infoArray[name][i]+'</div>'+
+                        '</div>';
+            }else{
+                html += '<div class="me">'+
+                            '<div class="connectContent leftContent">'+infoArray[name][i]+'</div>'+
+                            '<span class="arrow arrowRight"></span>'+
+                            '<img src="Images/default.jpg" style="width:50px;border-radius:25px;vertical-align: top;" />'+
+                        '</div>' ;
+            }
+        }
+		$('.connectInfo').css('display','table-cell');
+		$('.sendMessageContent').css('display','block');
+        $('.connectInfo').prepend(html);
+    });
+
+	function sendButtonClick(obj){
+		//发送消息按钮方法
+        infoArray[name].push($('.textDiv').html());
+        len = $('.me').length;
+        topnum = parseInt($('.me').eq(len-1).find('.arrow').css('top'));
+        console.log(topnum);
+        html = '<div class="me">'+
+                    '<div class="connectContent leftContent">'+$('.textDiv').html()+'</div>'+
+                    '<span class="arrow arrowRight"></span>'+
+                    '<img src="Images/default.jpg" style="width:50px;border-radius:25px;vertical-align: top;" />'+
+                '</div>' ;
+        $('.textDiv').html('');
+        $(obj).parent().before(html);
+	};
+		
+</script>>
+</body>
+</html>

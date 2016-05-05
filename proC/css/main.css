@@ -1,0 +1,85 @@
+.btn-cancel{margin-left: 30px;margin-right: 20px;}
+
+.btnDiv {
+    float: right;
+    margin-top: 20px;
+
+}
+
+#sidebar {
+    width: 20%;
+    float: left;
+    height: 600px;
+    border: solid #5bc0de 1px;
+    background: #5bc0de;
+}
+
+#content {
+    width: 80%;
+    float: left;
+    height: 600px;
+    border: solid #5bc0de 3px;
+}
+
+#div-main {
+    margin: 0 auto;
+    width: 1000px;
+    height: 850px;
+}
+
+#nav-head {
+    padding-top: 10px;
+    height: 60px;
+    width: 1000px;
+    margin: 0 auto 20px auto;
+    /*filter: alpha(opacity=50);opacity: 0.5;*/
+    background: rgba(255, 255, 255, 0.4);
+    border: solid transparent 1px;
+}
+
+#nav-left {
+    float: left;
+}
+
+#nav-right {
+    float: right;
+    margin-right: 20px;
+}
+
+#s-btn {
+    color: #23527c;
+}
+
+#div-board{
+    height: 250px;
+    width: 100%;
+    margin-bottom: 20px;
+    background: #5bc0de;
+}
+
+
+.light{
+    background: #5bc0de;
+}
+
+#search-box{
+    height: 50px;
+    width:290px;
+    float: right;
+    margin-top: 15px;
+}
+
+#sidebar-head{
+    text-align: center;
+    height: 60px;
+    background: #5bc0de;
+}
+
+#sidebar-head-img{
+    margin-top: 5px;
+}
+
+.side-a{
+    margin-left: 2px;
+    margin-right: 2px;
+}
